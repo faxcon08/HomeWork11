@@ -30,6 +30,12 @@ public class Main {
         } else
             System.out.println("Установите  приложения для "+iOSVersion+" по ссылке");
 
+    }// printMessageForVersion
+
+    static int calculateDeliveryDays(int distance) {
+        if(distance <0 || distance>1000)
+            throw new RuntimeException("Отрицательная дистанция");
+        return  (distance+19)/40+1;
     }
 
     public static void main(String[] args) {
@@ -41,6 +47,10 @@ public class Main {
         int iOS = 1;
         int clientDeviceYear = 2013;
         printMessageForVersion(iOS,clientDeviceYear);
+
+        printTaskNumber("Third"); ///////////// Third /////////////////
+        int distance = 141;
+        System.out.println("Потребуется дней:" + calculateDeliveryDays(distance));
 
     }// main
 
